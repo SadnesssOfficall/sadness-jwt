@@ -1,0 +1,65 @@
+{
+  "name": "sadness-jwt",
+  "version": "0.1.0",
+  "description": "Decode, inspect and safely verify JSON Web Tokens from the CLI or from code. Algorithm-confusion resistant, zero runtime dependencies.",
+  "keywords": [
+    "jwt",
+    "json-web-token",
+    "jws",
+    "hs256",
+    "rs256",
+    "token",
+    "security",
+    "cli",
+    "verification"
+  ],
+  "license": "MIT",
+  "author": "Sadness",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "sadness-jwt": "dist/cli/bin.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SadnesssOfficall/sadness-jwt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SadnesssOfficall/sadness-jwt/issues"
+  },
+  "homepage": "https://github.com/SadnesssOfficall/sadness-jwt#readme",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "prepublishOnly": "npm run lint && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.4",
+    "eslint": "^10.12.0",
+    "prettier": "^3.9.9",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.0",
+    "vitest": "^4.1.11"
+  }
+}
